@@ -1,4 +1,13 @@
-# itsi-m365-integration
+**Table of Contents**
+
+- [Requirements](#requirements)
+- [1. Microsoft Data Input 만들기 (Core)](#1-microsoft-data-input-만들기-core)
+  - [1-1. Azure AD에서 통합 애플리케이션 구성](#1-1-azure-ad에서-통합-애플리케이션-구성)
+  - [1-2. Tenant 연동하기](#1-2-tenant-연동하기)
+  - [1-3. Input 생성하기](#1-3-input-생성하기)
+- [2. M365 Content Pack 구성하기 (ITSI)](#2-m365-content-pack-구성하기-itsi)
+  - [2-1. M365 콘텐츠팩 설치하기](#2-1-m365-콘텐츠팩-설치하기)
+- [참조](#참조)
 
 # Requirements
 
@@ -7,6 +16,7 @@
 - [ ] API 조회 권한 및 secret
 - [ ] Splunk Cloud / Enterprise 가 Microsoft 와 443 통신이 가능해야 합니다
 - [ ] Microsoft Azure의 Admin 권한이 필요합니다 - API 조회 권한 부여 시 Application 타입의 권한은 어드민이 직접 부여하거나, 어드민의 승인이 받아야 부여가 완료됩니다
+- [ ] sankey diagrams and punchcard visualizations - Custom Visualization을 위해 추가 시각화 앱이 필요합니다
 
 # 1. Microsoft Data Input 만들기 (Core)
 
@@ -70,3 +80,25 @@ Microsoft Office 365 Add-on 에서 Input 탭으로 이동합니다.
 [Add] 를 눌러 Input 생성을 완료합니다
 
 # 2. M365 Content Pack 구성하기 (ITSI)
+
+## 2-1. M365 콘텐츠팩 설치하기
+
+**ITSI > Data Integration** 메뉴에서 Contents Library 탭으로 이동하여 Microsoft 365 타일을 찾아 클릭합니다.
+다음 창에서 [Preceed] 버튼을 눌러 콘텐츠팩 설치를 지속합니다
+
+![](./src/images/2-1-install-content-pack.jpg)
+
+설치 옵션 화면에서 아래 부분이 모두 선택이 되었는지 확인합니다.
+
+- [ ] 콘텐츠팩의 모든 요소를 선택합니다
+- [ ] Import as enabled 를 활성화 시킵니다
+- [ ] Activate All saved search 를 선택합니다
+
+# 참조
+
+| 설명                                                     | 링크                                                                                   |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Install the Splunk Add-on for Microsoft Office 365       | https://splunk.github.io/splunk-add-on-for-microsoft-office-365/Install/               |
+|                                                          | https://splunk.github.io/splunk-add-on-for-microsoft-office-365/ConfigureAppinAzureAD/ |
+| Install and configure the Content Pack for Microsoft 365 | https://docs.splunk.com/Documentation/CPM365/1.5.0/CP/Install                          |
+| KPI reference for the Content Pack for Microsoft 365     | https://docs.splunk.com/Documentation/CPM365/1.5.0/CP/KPIReference                     |
